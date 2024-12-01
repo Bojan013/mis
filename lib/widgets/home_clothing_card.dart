@@ -50,6 +50,4 @@ class _HomeClothingCard extends State<HomeClothingCard> {
       ),
     );
   }
-
 }
-

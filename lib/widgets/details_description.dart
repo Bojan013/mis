@@ -13,7 +13,7 @@ class DetailsDescription extends StatelessWidget {
         description,
         textAlign: TextAlign.justify,
         style: const TextStyle(
-          fontSize: 16.0,
+          fontSize: 18.0,
           color: Colors.black54,
         ),
       ),

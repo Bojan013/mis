@@ -13,7 +13,7 @@ class DetailsTitle extends StatelessWidget {
         title,
         textAlign: TextAlign.center,
         style: const TextStyle(
-          fontSize: 24.0,
+          fontSize: 30.0,
           fontWeight: FontWeight.bold,
           color: Colors.black87,
         ),
