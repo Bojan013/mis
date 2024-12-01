@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mis/models/clothing_item.dart';
+import 'package:mis/widgets/home_clothing_card.dart';
 
 class HomeMainGrid extends StatefulWidget {
   final List<ClothingItem> clothingItems;
@@ -32,41 +33,7 @@ class _HomeMainGridState extends State<HomeMainGrid> {
                 arguments: item,
               );
             },
-            child: Card(
-              color: Colors.black12,
-              elevation: 4.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Image.network(
-                      item.img,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      item.name,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text(
-                      item.price,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            child: HomeClothingCard(clothingItem: item),
           );
         });
   }
