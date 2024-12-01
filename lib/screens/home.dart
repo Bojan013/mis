@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mis/models/clothing_item.dart';
+import 'package:mis/widgets/home_main_grid.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -9,6 +11,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final List<ClothingItem> clothingItems = List.generate(
+    11,
+        (index) => ClothingItem(
+      id: index + 1,
+      name: 'Clothing Item ${index + 1}',
+      img: 'https://via.placeholder.com/150', // Placeholder image URL
+      description: 'Description for item ${index + 1}',
+      price: '\$${(index + 1) * 10}',
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +42,11 @@ class _HomeState extends State<Home> {
             fontWeight: FontWeight.bold// Text color
           ),
         ),
-        backgroundColor: Colors.blue, // Background color of the AppBar
+        backgroundColor: Colors.black87, // Background color of the AppBar
         centerTitle: true, // Centers the text in the AppBar
       ),
-      // body: ,
+      body: HomeMainGrid(clothingItems: clothingItems),
+
     );
   }
 }
